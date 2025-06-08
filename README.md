@@ -2675,6 +2675,7 @@ Below are the Swagger tags used in the code and their purposes:
 - `@Router`: The HTTP method and path of the API endpoint.
 - `@Security`: The security scheme used for the API endpoint.
 
+cmd: ```go install github.com/swaggo/swag/cmd/swag@latest```   
 Run `swag init --dir cmd/api --parseDependency --parseInternal --parseDepth 1` to generate the Swagger documentation.
 
 If you open up localhost:8080/swagger/index.html in your browser, you will see the Swagger UI with all the API endpoints.
@@ -2683,7 +2684,7 @@ If you open up localhost:8080/swagger/index.html in your browser, you will see t
 
 Swagger Overview
 
-### Trying our api with swagger
+### Trying our api with swagger [docs]("https://github.com/swaggo/swag/blob/master/README.md#declarative-comments-format)
 
 Go to the login endpoint and click the button `Try it out` Fill in the email and password and click `Execute`.
 

@@ -8,6 +8,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// CreateEvent creates a new event
+//
+//	@Summary		Creates a new event
+//	@Description	Creates a new event
+//	@Tags			events
+//	@Accept			json
+//	@Produce		json
+//	@Param			event	body	database.Event	true	"Event"
+//	@Success		201		{object}	database.Event
+//	@Router			/v1/events [post]
+//	@Security		BearerAuth
 func (app *application) createEvent(c *gin.Context) {
 	var event database.Event
 	if err := c.ShouldBindJSON(&event); err != nil {
@@ -45,6 +56,16 @@ func (app *application) getEventByID(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, event)
 }
+
+// GetEvents returns all events
+//
+//	@Summary		Returns all events
+//	@Description	Returns all events
+//	@Tags			events
+//	@Accept			json
+//	@Produce		json
+//	@Success		200		{object}	[]database.Event
+//	@Router			/v1/events [get]
 func (app *application) getAllEvents(c *gin.Context) {
 	events, err := app.models.Events.GetAll()
 	if err != nil {
